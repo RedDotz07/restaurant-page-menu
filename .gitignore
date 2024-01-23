@@ -1,0 +1,60 @@
+# Compiled class file
+*.class
+
+# Maven target directory
+/target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Intellij project files
+.idea/
+
+# Compiled bytecode
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+*.iml
+*.suo
+*.user
+*.suo
+*.user
+*.userosscache
+*.suo
+*.suo
+*.suo
+
+# Package Files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Dependency directories
+node_modules/
+bower_components/
+dist/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
