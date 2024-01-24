@@ -1,27 +1,30 @@
-function loadPage(page: string) {
-	const container = document.getElementById('app');
-	if (!container) {
-		return;
-	}
+import { displayMenuList } from './menu.js';
+import { displayMenuListType } from '../types/menuTypes.js';
 
-	fetch(`pages/${page}.html`)
-		.then((res) => res.text())
-		.then((html) => {
-			container.innerHTML = html;
-		})
-		.catch((err) => console.error('Error loading pagge', err));
+const buttons = document.querySelectorAll('button');
+let currentActiveMenu = document.getElementById('All') as HTMLElement | null;
+
+if (currentActiveMenu) {
+	const currentActive: displayMenuListType =
+		currentActiveMenu.id as displayMenuListType;
+
+	currentActiveMenu.classList.add('active');
+	displayMenuList(currentActive);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	loadPage('home');
-});
+function handleMenuChange(event: Event) {
+	if (currentActiveMenu) {
+		currentActiveMenu.classList.remove('active');
+	}
 
-document.querySelectorAll('nav a').forEach((link) => {
-	link.addEventListener('click', (event) => {
-		event.preventDefault();
-		const page = link.getAttribute('href')?.replace('.html', '');
-		if (page) {
-			loadPage(page);
-		}
-	});
+	currentActiveMenu = event.target as HTMLElement;
+	currentActiveMenu.classList.add('active');
+
+	const currentActive: displayMenuListType =
+		currentActiveMenu.id as displayMenuListType;
+	displayMenuList(currentActive);
+}
+
+buttons.forEach((button) => {
+	button.addEventListener('click', handleMenuChange);
 });

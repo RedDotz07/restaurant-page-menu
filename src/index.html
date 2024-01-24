@@ -6,14 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Page Menu</title>
   <link rel="shortcut icon" href="#">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./output.css">
+  <link rel="stylesheet" href="./input.css">
+  <script defer type="module" src="../dist/scripts/app.js"></script>
 </head>
 
 <body>
-
-  <script type="module" src="../dist/pages/home.js"></script>
-  <script type="module" src="../dist/pages/utils.js"></script>
-  <script type="module" src="../dist/scripts/app.js"></script>
+  <div id="root" class="flex flex-col items-center justify-center h-screen">
+    <h1>Our Menu</h1>
+    <div id="main-page"></div>
+    <div class="p-2 flex flex-wrap justify-center gap-4 w-full">
+      <button id="All">All</button>
+      <button id="breakfast">Breakfast</button>
+      <button id="drinks">Drinks</button>
+      <button id="lunch">Lunch</button>
+      <button id="sides">Sides</button>
+    </div>
+    <div id="menu-list"></div>
+  </div>
 </body>
 
 </html>
